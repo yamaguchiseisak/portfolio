@@ -1,0 +1,442 @@
+@use "reset";
+@use "variables"as *;
+@use "mixin"as *;
+@use "common";
+
+.page-wrap {
+    padding: 0 63px;
+    padding-top: 312px;
+
+    @include mq(sp) {
+        padding: 0 20px;
+        // margin-top: -166px;
+        padding-top: 166px;
+    }
+}
+
+// ヘッダー
+
+.header {
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    height: 112px;
+    padding: 0 63px;
+    align-items: center;
+    border-bottom: 1px solid $main;
+    margin-bottom: 200px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    @include mq(sp) {
+        height: 70px;
+        padding: 0 20px;
+        margin-bottom: 96px;
+    }
+
+    &__logo {
+        margin-top: 16px;
+
+        & img {
+            width: 270px;
+            height: 45px;
+        }
+
+        @include mq(sp) {
+            margin-top: 10px;
+
+            & img {
+                width: 50%;
+                height: 50%;
+            }
+        }
+    }
+
+    &__right {
+        text-align: right;
+        margin-top: 4px;
+
+        @include mq(sp) {
+            display: none;
+        }
+    }
+
+    &__left{
+        margin-bottom: -12px;
+    }
+
+    &__left p {
+        margin-left: 48px;
+        margin-bottom: -10px;
+        @include mq(sp) {
+            font-size: 10px;
+            margin-bottom: -10px;
+            margin-left: 30px;
+        }
+    }
+
+    &-nav {
+        display: flex;
+        margin-top: 24px;
+
+        &__link {
+            margin-right: 40px;
+            &:hover a{
+                opacity: 0.5;
+                transition: all 0.8s ease;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &-mail {
+        display: flex;
+        justify-content: right;
+        gap: 8px;
+        color: $sub;
+
+        & span {
+            margin-top: 3px;
+        }
+    }
+}
+
+// ハンバーガーメニュー
+.hamburger {
+    display: none;
+
+    @include mq(sp) {
+        display: flex;
+        flex-flow: column;
+        row-gap: 10px;
+
+        &__border1 {
+            background-color: $main;
+            height: 2px;
+            width: 32px;
+            transition: all 0.5s;
+        }
+
+        &__border2 {
+            background-color: $main;
+            height: 2px;
+            width: 32px;
+            transition: all 0.5s;
+        }
+
+        &__border3 {
+            background-color: $main;
+            height: 2px;
+            width: 32px;
+            transition: all 0.5s;
+        }
+
+        .hamburger__border1.active {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .hamburger__border2.active {
+            display: none;
+        }
+
+        .hamburger__border3.active {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .sp-header-nav {
+            width: 50vw;
+            height: 100vh;
+            background-color: $white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+
+            &__list {
+                padding-left: 20px;
+                padding-top: 100px;
+                text-align: left;
+
+                p {
+                    color: $black;
+                    margin-bottom: 40px;
+                    font-size: 10px;
+                }
+            }
+
+            &__link {
+                margin-bottom: 40px;
+                font-size: 30px;
+                color: $black;
+                &:hover a{
+                    color: $main;
+                }
+            }
+
+            .sp-sns-link {
+                display: flex;
+                // justify-content: center;
+
+                &__icon {
+                    color: $sub;
+                    margin-right: 10px;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+// ヘッダーここまで↑↑
+
+.works,.about,.contact{
+    text-align: center;
+}
+
+.section-headline {
+    position: relative;
+    padding: 1.5rem 1rem;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 56px;
+
+    @include mq(sp) {
+        margin-bottom: 48px;
+    }
+}
+
+.section-headline:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: -webkit-repeating-linear-gradient(135deg, $main, $main 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, $main, $main 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+.works-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 56px;
+    margin-bottom: 200px;
+
+    @include mq(sp) {
+        display: initial;
+        flex-wrap: initial;
+        justify-content: initial;
+        margin-bottom: 96px;
+    }
+}
+
+.works-content {
+    width: 50%;
+
+    @include mq(sp) {
+        width: 100%;
+        margin-bottom: 48px;
+
+        &:last-child {
+            margin-bottom: 96px;
+        }
+    }
+
+    .img-box {
+        // background-color: $sub;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        transition: all .8s ease;
+
+        &:hover {
+            transform: scale(1.2);
+            opacity: 0.8;
+        }
+    }
+
+    &__title {
+        margin: 8px 0;
+    }
+
+    &__name {
+        margin-bottom: 8px;
+    }
+}
+
+.pad-right {
+    padding-right: 15px;
+
+    @include mq(sp) {
+        padding-right: initial;
+    }
+}
+
+.pad-left {
+    padding-left: 15px;
+
+    @include mq(sp) {
+        padding-left: initial;
+    }
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: $main;
+}
+
+.no-button {
+    margin-top: 33px;
+}
+
+.btn {
+    background-color: $sub;
+    color: $white;
+    display: block;
+    font-size: 14px;
+    font-family: $spin;
+    height: 25px;
+    width: 90px;
+    line-height: 25px;
+    text-align: center;
+    margin-bottom: 8px;
+    transition: all 0.8s ease;
+
+    &:hover {
+        background-color: $main;
+    }
+}
+
+// ABOUT
+
+.about-text {
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 2;
+
+    @include mq(sp) {
+        line-height: 1.8;
+    }
+}
+
+.about-wrap {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+
+    @include mq(sp) {
+        margin-bottom: 96px;
+    }
+}
+
+.about-content {
+    font-weight: bold;
+    margin-right: 100px;
+
+    &__title {
+        margin-bottom: 16px;
+
+        @include mq(sp) {
+            margin-bottom: 14px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__sub p {
+        margin-bottom: 16px;
+
+        @include mq(sp) {
+            margin-bottom: 14px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// CONTACT
+.contact {
+    margin-bottom: 200px;
+
+    @include mq(sp) {
+        margin-bottom: 96px;
+    }
+}
+
+.contact-text {
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 2;
+
+    @include mq(sp) {
+        line-height: 1.8;
+    }
+
+}
+
+.contact-mail {
+    display: flex;
+    justify-content: center;
+    color: $sub;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    & p {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    & span {
+        margin-top: 2px;
+    }
+}
+
+.sns-link {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    &__icon {
+        display: flex;
+        color: $sub;
+    }
+}
+
+.sp-none {
+    display: none;
+}
+
+// フッター
+
+.footer {
+    height: 96px;
+    background-color: $main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(sp) {
+        height: 64px;
+    }
+}
+
+.copyrights {
+    color: $white;
+}

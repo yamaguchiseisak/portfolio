@@ -1,0 +1,56 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+body{
+    color: $black;
+    font-family: $spin,$sans,sans;
+}
+
+h2{
+    font-size: 50px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+h4{
+    font-size: 16px;
+}
+
+p{
+    font-size: 16px;
+}
+
+span{
+    display: inline-block;
+    font-size: 14px;
+}
+
+li{
+    list-style: none;
+}
+
+@include mq(sp){
+    h2{
+        font-size: 30px;
+    }
+    
+    h3{
+        font-size: 16px;
+    }
+    
+    h4{
+        font-size: 14px;
+    }
+    
+    p{
+        font-size: 14px;
+    }
+    
+    span{
+        display: inline-block;
+        font-size: 12px;
+    }
+
+}
