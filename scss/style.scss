@@ -402,7 +402,7 @@
         font-size: 24px;
         font-weight: bold;
 
-        @include mq(sp){
+        @include mq(sp) {
             font-size: 20px;
         }
     }
