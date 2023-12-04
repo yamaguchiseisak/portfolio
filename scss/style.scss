@@ -346,6 +346,9 @@
 .about-content {
     font-weight: bold;
     margin-right: 100px;
+    @include mq(sp) {
+        margin-right: 80px;
+    }
 
     &__title {
         margin-bottom: 16px;
