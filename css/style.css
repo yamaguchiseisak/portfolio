@@ -749,7 +749,7 @@ li {
 }
 @media screen and (max-width:599px) {
   .about-content {
-    margin-right: 80px;
+    margin-right: 64px;
   }
 }
 .about-content__title {
