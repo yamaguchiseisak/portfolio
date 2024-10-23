@@ -932,6 +932,11 @@ li {
           animation: logo_fade 2s 0.5s forwards;
   width: 300px;
 }
+@media screen and (max-width:599px) {
+  .loading__logo {
+    width: 150px;
+  }
+}
 
 @-webkit-keyframes logo_fade {
   0% {
