@@ -597,7 +597,9 @@ li {
   }
 }
 
-.works, .about, .contact {
+.works,
+.about,
+.contact {
   text-align: center;
 }
 
@@ -844,5 +846,74 @@ li {
 
 .copyrights {
   color: #ffffff;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: fadeOut 1.5s 2.5s forwards;
+          animation: fadeOut 1.5s 2.5s forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loading__logo {
+  opacity: 0;
+  -webkit-animation: logo_fade 2s 0.5s forwards;
+          animation: logo_fade 2s 0.5s forwards;
+  width: 300px;
+}
+
+@-webkit-keyframes logo_fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes logo_fade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
