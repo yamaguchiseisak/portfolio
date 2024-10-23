@@ -347,14 +347,22 @@
 }
 
 .about-wrap {
-  display: flex;
-  max-width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 64px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 200px;
 
   @include mq(sp) {
     margin-bottom: 96px;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
   }
+}
+.about-detail {
+  border: 1px solid #314a7f;
+  padding: 32px;
 }
 
 .about-content {
@@ -387,6 +395,33 @@
       margin-bottom: 0;
     }
   }
+}
+.about-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  line-height: 1.7;
+  @include mq(sp) {
+    font-size: 20px;
+  }
+}
+.about-text1 {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+.service-details,
+.address,
+.mail {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.service-text {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+.tools {
+  line-height: 1.7;
 }
 
 // CONTACT
